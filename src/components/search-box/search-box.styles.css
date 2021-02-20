@@ -1,0 +1,115 @@
+/* .search {
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 150px;
+    line-height: 30px;
+    margin-bottom: 30px;
+} */
+
+input[type="search"] {
+    font: 15px/24px 'Muli', sans-serif;
+    color: black;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+}
+
+:focus {
+    outline: none;
+}
+
+.search-container {
+    width: 40vw;
+    margin: 40px auto;
+    position: relative;
+}
+
+/* necessary to give position: relative to parent. */
+input[type="search"] {
+    font: 15px/24px "Lato", Arial, sans-serif;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+.search {
+    border: 1px solid #ccc;
+    padding: 7px 14px;
+    transition: 0.4s;
+    background: transparent;
+}
+.search~.focus-border:before,
+.search~.focus-border:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4caf50;
+    transition: 0.3s;
+}
+
+.search~.focus-border:after {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+}
+
+.search~.focus-border i:before,
+.search~.focus-border i:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background-color: #4caf50;
+    transition: 0.4s;
+}
+
+.search~.focus-border i:after {
+    left: auto;
+    right: 0;
+    top: auto;
+    bottom: 0;
+}
+
+.search:focus~.focus-border:before,
+.search:focus~.focus-border:after,
+.has-content.search~.focus-border:before,
+.has-content.search~.focus-border:after {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.search:focus~.focus-border i:before,
+.search:focus~.focus-border i:after,
+.has-content.search~.focus-border i:before,
+.has-content.search~.focus-border i:after {
+    height: 100%;
+    transition: 0.4s;
+}
+
+.search~label {
+    position: absolute;
+    left: 14px;
+    width: 100%;
+    top: 10px;
+    color: #aaa;
+    transition: 0.3s;
+    z-index: -1;
+    letter-spacing: 0.5px;
+}
+
+.search:focus~label,
+.has-content.search~label {
+    top: -18px;
+    left: 0;
+    font-size: 12px;
+    color: #4caf50;
+    transition: 0.3s;
+}
